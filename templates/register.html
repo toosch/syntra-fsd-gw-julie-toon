@@ -1,0 +1,83 @@
+
+
+<main class="container" style="max-width: 760px">
+
+    <form class="input-form" method="POST" action="./lib/save.php" name="register">
+
+        <!--    meta info-->
+        <input type="hidden" id="formname" name="formname" value="register">
+        <input type="hidden" id="table" name="table" value="users">
+        <input type="hidden" id="pkey" name="pkey" value="usr_id">
+        <input type="hidden" id="afterinsert" name="afterinsert" value="index.php">
+
+        <!--    security-->
+        <input type="hidden" name="csrf" value="@csrf_token@">
+
+        <div class="mb-3">
+            <label for="forest_invite" class="form-label">Enter your invite code to register:</label>
+            <input
+                    type="text"
+                    class="form-control form_elements"
+                    id="forest_invite"
+                    name="forest_invite"
+                    value="@forest_invite@"
+            />
+            @forest_invite_error@
+        </div>
+        <div class="mb-3">
+            <label for="usr_name" class="form-label">Username</label>
+            <input
+                    type="text"
+                    class="form-control form_elements"
+                    id="usr_name"
+                    name="usr_name"
+                    value="@usr_name@"
+            />
+        </div>
+        <div class="mb-3">
+            <label for="usr_email" class="form-label">Email address</label>
+            <input
+                    type="email"
+                    class="form-control form_elements"
+                    id="usr_email"
+                    name="usr_email"
+                    value="@usr_email@"
+                    aria-describedby="emailHelp"
+            />
+            @usr_email_error@
+        </div>
+        <hr />
+        <div class="mb-3">
+            <label for="usr_password" class="form-label"
+            >Choose a password</label
+            >
+            <input
+                    type="password"
+                    class="form-control form_elements"
+                    id="usr_password"
+                    name="usr_password"
+            />
+            @usr_password_error@
+        </div>
+        <div class="mb-3">
+            <label class="form-label"
+            >Enter password again</label
+            >
+            <input
+                    type="password"
+                    class="form-control form_elements"
+                    id="usr_checkPassword"
+                    name="usr_checkPassword"
+            />
+        </div>
+        <button type="submit" class="btn btn-primary form_elements">Register</button>
+        <a href="./index.php" class="btn btn-primary form_elements">Back to login</a>
+    </form>
+</main>
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"
+></script>
+</body>
+</html>

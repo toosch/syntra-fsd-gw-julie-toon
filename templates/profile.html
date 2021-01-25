@@ -1,0 +1,140 @@
+<div class="row text-center">
+  <p class="col success-msg text-center">
+    @msg@
+  </p>
+</div>
+<div class="text-center">
+  <figure class="figure col-5">
+    <img
+            src="@USR_IMG@"
+            class="img-fluid rounded mb-3"
+            alt="profile picture"
+    />
+    <figcaption class="figure-caption">Profile picture</figcaption>
+  </figure>
+</div>
+
+
+
+<form class="input-form" method="POST" action="./lib/save.php">
+
+  <!--    meta info-->
+  <input type="hidden" id="formname" name="formname" value="profile">
+  <input type="hidden" id="table" name="table" value="users">
+  <input type="hidden" id="pkey" name="pkey" value="usr_id">
+  <input type="hidden" id="afterinsert" name="afterinsert" value="profile.php">
+  <input type="hidden" id="afterupdate" name="afterupdate" value="profile.php">
+
+  <!--    security-->
+          <input type="hidden" name="csrf" value="@csrf_token@">
+
+
+<!-- IMAGE UPLOAD-->
+  <div class="form-group border bg-light p-2">
+    <!-- een lege div; het id vermeld je in javascript -->
+    <div id="fileupload" class="dropzone mb-2 mt-0"></div>
+
+    <script>
+      var myDropzone = new Dropzone(
+              "div#fileupload", //id van de div die 'omgevormd' wordt tot een dropzone
+              {
+                url: "lib/update-profile-picture.php", //het script dat de upload afhandelt op de server
+                maxFilesize: 2, // MB
+                dictDefaultMessage: "Change your profile pic! (optional)",
+                maxFiles: 1,
+                init: function () {
+                  this.on("addedfile", function (file) {
+                    window.location.reload(); // reload profile.php
+                  }).on("error", function (file, response) {
+                    alert("Probleem met bestand " + file + " " + response);
+                  });
+                },
+              }
+      );
+    </script>
+
+    <label for="usr_id"></label>
+    <input type="hidden" id="usr_id" name="usr_id" value="@usr_id@">
+
+    <div class="mb-3">
+      <label for="usr_name" class="form-label">Username</label>
+      <input
+              type="text"
+              class="form-control form_elements"
+              id="usr_name"
+              name="usr_name"
+              value="@usr_name@"
+      />
+    </div>
+  <div class="mb-3">
+    <label for="usr_fn" class="form-label">First Name</label>
+    <input
+            type="text"
+            class="form-control form_elements"
+            id="usr_fn"
+            name="usr_fn"
+            value="@usr_fn@"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="usr_ln" class="form-label">Last name</label>
+    <input
+            type="text"
+            class="form-control form_elements"
+            id="usr_ln"
+            name="usr_ln"
+            value="@usr_ln@"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="usr_ln" class="form-label">Birthday</label>
+    <input
+            type="date"
+            class="form-control form_elements"
+            id="usr_birthday"
+            name="usr_birthday"
+            value="@usr_birthday@"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="usr_email" class="form-label">Email address</label>
+    <input
+            type="email"
+            readonly class="form-control-plaintext"
+            id="usr_email"
+            name="usr_email"
+            value="@usr_email@"
+            aria-describedby="emailHelp"
+    />
+    @usr_email_error@
+  </div>
+  <hr />
+  <div class="mb-3">
+    <label for="usr_password" class="form-label">Change password</label>
+    <input
+            type="password"
+            class="form-control form_elements"
+            id="usr_password"
+            name="usr_password"
+    />
+    @usr_password_error@
+  </div>
+  <div class="mb-3">
+    <label  class="form-label"
+    >Enter password again</label
+    >
+    <input
+            type="password"
+            class="form-control form_elements"
+            id="usr_checkPassword"
+            name="usr_checkPassword"
+    />
+  </div>
+  <button type="submit" name="btnUpdate" class="btn btn-primary form_elements">
+    Update
+  </button>
+    <button type="submit" name="btnCancel" class="btn btn-primary form_elements">
+      Cancel
+    </button>
+</form>
+</main>

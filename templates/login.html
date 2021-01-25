@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+            crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+
+
+    <title>Mycelium</title>
+</head>
+<body>
+<div class="container container-login" id="login-page">
+    <div class="row">
+        <div class="col text-center logo">
+            <img
+                    src="./img/mycelium-logo.jpg"
+                    class="logo__img"
+                    alt="logo-mycelium"
+            />
+
+            <h1 class="title">mycelium</h1>
+            <h2 class="subtitle">stay connected with your roots</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-4 col-lg-7 col-md-6 col-sm-8 text-center login">
+            <div class="row">
+                <div class="col">
+                    <a href="./index.php" class="login__action login__action--active"
+                    >sign in</a
+                    >
+                    <a
+                            href="./register.php"
+                            class="login__action login__action--unactive"
+                    >sign up</a
+                    >
+                </div>
+            </div>
+
+            <div class="row text-center">
+                <p class="col success-msg text-center">
+                    @msg@
+                </p>
+            </div>
+
+            <form class="login__form" method="POST" action="./lib/login-check.php">
+                <input type="text" class="login__form__type" name="usr_email" />
+                <div class="row">
+                    <div class="col text-left">
+                        <span class="login__form__text">email</span>
+                    </div>
+                </div>
+
+
+                <input type="password" class="login__form__type" name="usr_password" />
+                <div class="row">
+                    <div class="col text-left">
+                        <span class="login__form__text">password</span>
+                        @error-msg@
+                    </div>
+                </div>
+
+                <button type="submit" class="login__form__signin">Sign In</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"
+></script>
+</body>
+</html>

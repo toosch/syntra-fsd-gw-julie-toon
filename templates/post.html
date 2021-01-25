@@ -1,0 +1,67 @@
+<div class="card mx-auto p-0 mb-3 shadow">
+  @IMAGE@
+  <div class="card-body">
+    <h5 class="card-title">@TITLE@</h5>
+    <div class="card-subtitle mb-1 text-muted">
+      <img
+        src="https://style.anu.edu.au/_anu/4/images/placeholders/person.png"
+        alt="Profile picture"
+        class="rounded-circle"
+        width="30"
+        height="30"
+      />
+      @PST_USR@
+    </div>
+    <p class="card-text">@TEXT@</p>
+  </div>
+  <div class="card-footer text-muted border-bottom">@POST_DATE@</div>
+  <!-- START COMMENTS SECTION -->
+  <ul class="list-group list-group-flush">
+    @COMMENTS@
+  </ul>
+  <!-- END COMMENTS SECTION -->
+
+<!--  WRITE A COMMENT FORM-->
+  <div class="card-footer border-top-0 pb-0">
+    <form action="./lib/save.php" method="POST">
+      <input
+        type="hidden"
+        id="afterinsert"
+        name="afterinsert"
+        value="home.php"
+      />
+<!--      META DATA-->
+      <input type="hidden" id="formname" name="formname" value="comment" />
+      <input type="hidden" id="table" name="table" value="comments" />
+      <input type="hidden" id="pkey" name="pkey" value="comm_id" />
+
+      <!--    CSRF TOKEN-->
+      <input type="hidden" name="csrf" value="@csrf_token@">
+
+<!--      HIDDEN INFO-->
+      <input
+        type="hidden"
+        name="comm_pst_id"
+        id="comm_pst_id"
+        value="@PST_ID@"
+      />
+      <div class="form-row mb-0">
+        <div class="form-group col-md-10">
+          <input
+            type="text"
+            name="comm_body"
+            id="comm_body"
+            required="required"
+            class="form-control"
+            placeholder="Write a comment"
+          />
+        </div>
+        <div class="form-group col-md-2 ml-auto" style="max-width: 33%">
+          <button type="submit" class="btn btn-secondary form-control">
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<form action="./lib/save.php" method="POST" enctype="multipart/form-data">
+  <div class="form-group border bg-light p-2">
+    <!-- een lege div; het id vermeld je in javascript -->
+    <div id="fileupload" class="dropzone mb-2 mt-0"></div>
+
+    <script>
+      var myDropzone = new Dropzone(
+        "div#fileupload", //id van de div die 'omgevormd' wordt tot een dropzone
+        {
+          url: "lib/upload.php", //het script dat de upload afhandelt op de server
+          maxFilesize: 2, // MB
+          dictDefaultMessage: "Add an image to your post! (optional)",
+          maxFiles: 1,
+          init: function () {
+            this.on("addedfile", function (file) {
+              //alert("Bestand " + file + " opgeladen")
+            }).on("error", function (file, response) {
+              alert("Probleem met bestand " + file + " " + response);
+            });
+          },
+        }
+      );
+    </script>
+    <!-- einde essenti�le code voor dropzone -->
+
+    <!--    METADATA-->
+    <input type="hidden" id="formname" name="formname" value="post" />
+    <input type="hidden" id="table" name="table" value="posts" />
+    <input type="hidden" id="pkey" name="pkey" value="pst_id" />
+    <input type="hidden" id="afterinsert" name="afterinsert" value="home.php" />
+
+    <!--    CSRF TOKEN-->
+        <input type="hidden" name="csrf" value="@csrf_token@">
+
+    <!--      EXTRA INFO-->
+
+    <input type="hidden" name="pst_for_id" value="@usr_for_id@" />
+
+    <input
+      type="test"
+      class="form-control mb-2"
+      id="title"
+      name="pst_title"
+      placeholder="Some Cool Title"
+      required
+    />
+
+    <textarea
+      class="form-control mb-2"
+      id="pst_text"
+      rows="3"
+      name="pst_text"
+      placeholder="Something interesting you have to let the whole forest know!"
+      required
+    ></textarea>
+
+    <button type="submit" class="btn btn-secondary">Submit</button>
+  </div>
+</form>
