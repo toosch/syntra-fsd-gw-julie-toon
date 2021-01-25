@@ -19,6 +19,14 @@ function listComments($postID){
         $outputComment = str_replace("@COMM_DATE@", $comment['comm_date'], $outputComment);
         $outputComment = str_replace("@COMM_BODY@", $comment['comm_body'], $outputComment);
 
+        //ADD PROFILE PIC
+        if(is_file("./img/users/profile-picture-".$_SESSION['usr_id'])){
+            $imgProfileHtml ='./img/users/profile-picture-'.$_SESSION['usr_id'];
+            $outputComment = str_replace( "@PROFILE_IMG@", $imgProfileHtml, $outputComment );
+        } else {
+            $outputComment = str_replace( "@PROFILE_IMG@", "https://style.anu.edu.au/_anu/4/images/placeholders/person.png", $outputPost );
+        }
+
         $returnComment .= $outputComment;
     }
 
@@ -65,6 +73,14 @@ function listPosts($forestID){
         } else {
             $outputPost = str_replace( "@IMAGE@", "", $outputPost );
 
+        }
+
+        //ADD PROFILE PIC
+        if(is_file("./img/users/profile-picture-".$_SESSION['usr_id'])){
+            $imgProfileHtml ='./img/users/profile-picture-'.$_SESSION['usr_id'];
+            $outputPost = str_replace( "@PROFILE_IMG@", $imgProfileHtml, $outputPost );
+        } else {
+            $outputPost = str_replace( "@PROFILE_IMG@", "https://style.anu.edu.au/_anu/4/images/placeholders/person.png", $outputPost );
         }
 
         // ADD COMMENTS TO OUTPUT
