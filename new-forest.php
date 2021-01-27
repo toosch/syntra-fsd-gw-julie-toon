@@ -3,8 +3,8 @@ require_once './lib/autoload.php';
 
 if ($_SESSION['auth']) {
 
-    printHTML("Mycelium", "head.html");
-    printNav("Plant a new forest!");
+    echo printHTML("Mycelium", "head.html");
+    echo printNav("Plant a new forest!");
 
     $extra_elements['csrf_token'] = GenerateCSRF("new-forest.php");
 

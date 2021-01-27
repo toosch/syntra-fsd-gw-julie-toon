@@ -1,12 +1,12 @@
 <?php
 require_once './lib/autoload.php';
 
-error_reporting( E_ALL );
-ini_set( 'display_errors', 1 );
+//error_reporting( E_ALL );
+//ini_set( 'display_errors', 1 );
 
 
-printHTML("Mycelium: register", "head.html");
-printHTML("register", "headerReg.html");
+echo printHTML("Mycelium: register", "head.html");
+echo printHTML("register", "headerReg.html");
 
 //get data
 if ( count($old_post) > 0 )

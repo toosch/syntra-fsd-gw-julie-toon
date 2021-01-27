@@ -2,7 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0085866-197f-46a1-84f5-ad3a82f0fd72" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/bg-img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/join-forest.php" beforeDir="false" afterPath="$PROJECT_DIR$/join-forest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/changeforest.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/changeforest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/element_functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/element_functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/html-functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/html-functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/save.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/save.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new-forest.php" beforeDir="false" afterPath="$PROJECT_DIR$/new-forest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bottom-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bottom-page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/head.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/nav.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/new-post-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/new-post-form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,10 +52,20 @@
       <option name="presentableId" value="Default" />
       <updated>1611611141940</updated>
       <workItem from="1611611143000" duration="71000" />
+      <workItem from="1611766713681" duration="61000" />
+      <workItem from="1611766785341" duration="9000" />
+      <workItem from="1611766795300" duration="654000" />
+      <workItem from="1611768564214" duration="7835000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="539" y="367" key="NewPhpFileDialog" timestamp="1611775542359">
+      <screen x="0" y="23" width="1440" height="824" />
+    </state>
+    <state x="539" y="367" key="NewPhpFileDialog/0.23.1440.824@0.23.1440.824" timestamp="1611775542359" />
   </component>
 </project>

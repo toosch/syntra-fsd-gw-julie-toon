@@ -5,7 +5,7 @@ require_once './autoload.php';
 $query = 'SELECT forests.for_id, forests.for_name FROM users 
                         JOIN users_forests ON users.usr_id = users_forests.usr_id
                         JOIN forests ON forests.for_id = users_forests.for_id
-                        WHERE (users.usr_id = '.$_SESSION['usr_id'].')';
+                        WHERE users.usr_id = '.$_SESSION['usr_id'] ;
 $result = GetData($query);
 
 foreach ($result as $forest) {
@@ -16,6 +16,5 @@ foreach ($result as $forest) {
     }
 }
 // IF NOT REDIRECTED TO FOREST --> USER DOES NOT HAVE ACCESS
-$subtitle = "Oops, you can't enter the forest here... go find another way explorer!";
-printHTML($subtitle, "logout.html");
+header("Location: ../home.php");
 

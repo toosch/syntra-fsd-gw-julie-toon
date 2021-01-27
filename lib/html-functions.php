@@ -13,7 +13,7 @@ function printNav($title){
     $html_nav = file_get_contents($template_nav);
     $html_nav = str_replace("@title@", $title, $html_nav);
     $html_nav = addForestsToNav($html_nav);
-    print $html_nav;
+    return $html_nav;
 }
 
 function buildHTML($template, $data)

@@ -6,8 +6,8 @@ require_once './lib/autoload.php';
 
 if ($_SESSION['auth']) {
     //PRINT HEAD AND NAV
-    printHTML("Mycelium: profile", "head.html");
-    printNav("profile");
+    echo printHTML("Mycelium: profile", "head.html");
+    echo printNav("profile");
 
     //GET DATA
     $sql = "select * from users where usr_id = " . $_SESSION['usr_id'];

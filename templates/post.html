@@ -14,7 +14,22 @@
     </div>
     <p class="card-text">@TEXT@</p>
   </div>
-  <div class="card-footer text-muted border-bottom">@POST_DATE@</div>
+  <div class="card-footer text-muted border-bottom d-flex justify-content-between align-content-center"><span class="d-flex flex-column justify-content-center">@POST_DATE@</span>
+    <div class="d-flex align-items-center">
+
+      <!--  DELETE POST SECTION-->
+      <form action="./lib/delete-post.php" method="post">
+        <input type="hidden" name="del_pst_id" id="del_pst_id" value="@PST_ID@">
+        <button class="btn btn-edit" type="submit">
+          <svg class="icon icon-trash">
+            <use xlink:href="./css/icomoon/symbol-defs.svg#icon-trash"></use>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+
   <!-- START COMMENTS SECTION -->
   <ul class="list-group list-group-flush">
     @COMMENTS@

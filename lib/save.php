@@ -66,8 +66,7 @@ function SaveFormData()
         if ( count($_SESSION['errors']) > 0)
         {
             $_SESSION['OLD_POST'] = $_POST;
-//            header( "Location: " . $sending_form_uri ); exit();
-            var_dump($_SESSION['errors']);
+            header( "Location: " . $sending_form_uri ); exit();
         }
 
         // INSERT OR UPDATE
@@ -141,7 +140,7 @@ function SaveFormData()
 
         //extend SQL with WHERE
         $sql .= $where;
-        var_dump($sql);
+
 
         //run SQL
         $result = ExecuteSQL( $sql );
@@ -172,10 +171,10 @@ function SaveFormData()
             }
         }
 
-        //IF NOT REDIRECTED
-        print $sql ;
-        print "<br>";
-        print $affected . " records affected";
+//        IF NOT REDIRECTED
+//        print $sql ;
+//        print "<br>";
+//        print $affected . " records affected";
 
         //REDIRECT
         if ( $insert AND $_POST["afterinsert"] > "" ) header("Location: ../" . $_POST["afterinsert"] );

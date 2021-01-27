@@ -24,7 +24,7 @@ function listComments($postID){
             $imgProfileHtml ='./img/users/profile-picture-'.$_SESSION['usr_id'];
             $outputComment = str_replace( "@PROFILE_IMG@", $imgProfileHtml, $outputComment );
         } else {
-            $outputComment = str_replace( "@PROFILE_IMG@", "https://style.anu.edu.au/_anu/4/images/placeholders/person.png", $outputPost );
+            $outputComment = str_replace( "@PROFILE_IMG@", "https://style.anu.edu.au/_anu/4/images/placeholders/person.png", $outputComment );
         }
 
         $returnComment .= $outputComment;
@@ -116,10 +116,10 @@ function viewNext() {
 
 
 function addForestsToNav($template) {
-    $query = 'SELECT * FROM users 
+    $query = "SELECT * FROM users 
                             JOIN users_forests ON users_forests.usr_id = users.usr_id
                             JOIN forests ON forests.for_id = users_forests.for_id
-                        WHERE (users.usr_id = '.$_SESSION['usr_id'].')';
+                        WHERE users.usr_id = '" .$_SESSION['usr_id']. "'";
     $output = "";
     $result = GetData($query);
     foreach ($result as $forest) {

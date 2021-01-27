@@ -8,8 +8,8 @@ $_SESSION["upload-image"] = uniqid($_SESSION['usr_id'] . "_", true);
 
 if ($_SESSION['auth']) {
 
-    printHTML("Mycelium", "head.html");
-    printNav($_SESSION['active_forest_name']);
+    echo printHTML("Mycelium", "head.html");
+    echo printNav($_SESSION['active_forest_name']);
 
     //CSRF
     $extra_elements['csrf_token'] = GenerateCSRF("home.php");
@@ -20,6 +20,13 @@ if ($_SESSION['auth']) {
     $newForm = str_replace("@csrf_token@", $extra_elements['csrf_token'], $newForm);
     $newForm = str_replace("@usr_for_id@", $_SESSION['usr_for_id'], $newForm);
     $newForm = str_replace("@usr_id@", $_SESSION['usr_id'], $newForm);
+
+    if(empty($errors)){
+        $newForm = str_replace("@del_error_msg@", "", $newForm);
+
+    } else {
+        $newForm = str_replace("@del_error_msg@", $errors['del_error_msg'], $newForm);
+    }
 
     echo $newForm;
 
