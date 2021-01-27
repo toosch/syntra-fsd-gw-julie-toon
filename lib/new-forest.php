@@ -9,7 +9,7 @@ ExecuteSQL($query);
 // id van de nieuwe forest...
 $query = "SELECT for_id FROM forests WHERE for_invite_code = '".$uniqueInviteCode."'";
 $forestId = GetData($query)[0]['for_id'];
-var_dump($forestId);
+
 // ook in de koppeltabel!
 $userId = $_SESSION['usr_id'];
 $query = "INSERT INTO users_forests VALUES ($userId, $forestId)";

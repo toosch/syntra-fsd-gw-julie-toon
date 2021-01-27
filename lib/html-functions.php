@@ -5,7 +5,7 @@ function printHTML($title, $template){
     $html = "templates/" . $template;
     $html = file_get_contents($html);
     $html = str_replace("@title@", $title, $html);
-    print $html;
+    return $html;
 }
 
 function printNav($title){
